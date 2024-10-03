@@ -44,6 +44,25 @@ public class Card {
         return this.aSuit;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Card card = (Card) obj;
+        return aRank == card.aRank && aSuit == card.aSuit;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = aRank.hashCode();
+        result = 31 * result + aSuit.hashCode();
+        return result;
+    }
+
     /**
      * Returns a string representation of this card.
      *
