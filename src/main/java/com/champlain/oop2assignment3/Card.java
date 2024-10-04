@@ -45,6 +45,37 @@ public class Card {
     }
 
     /**
+     * Checks if this card is equal to another.
+     *
+     * @param obj the object to compare this card to.
+     * @return true if the other object is a card with same rank and suit,
+     * otherwise false.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Card card = (Card) obj;
+        return aRank == card.aRank && aSuit == card.aSuit;
+    }
+
+    /**
+     * Returns the hash code for this card
+     *
+     * @return the hash code based on the rank and suit.
+     */
+    @Override
+    public int hashCode() {
+        int result = aRank.hashCode();
+        result = 31 * result + aSuit.hashCode();
+        return result;
+    }
+
+    /**
      * Returns a string representation of this card.
      *
      * @return a string in the format "Rank of Suit" (e.g., "Ace of Hearts")
