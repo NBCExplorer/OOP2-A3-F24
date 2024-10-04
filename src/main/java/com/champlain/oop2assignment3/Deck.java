@@ -18,8 +18,6 @@ public class Deck extends CardCollection implements CardSource {
      */
     private final List<Card> aCards = new ArrayList<>();
 
-    private static Deck instance;
-
     /**
      * The single instance of the Deck class.
      */
@@ -35,13 +33,6 @@ public class Deck extends CardCollection implements CardSource {
                 this.aCards.add(new Card(currentRank, currentSuit));
             }
         }
-    }
-
-    public static Deck getInstance() {
-        if (instance == null) {
-            instance = new Deck();
-        }
-        return instance;
     }
 
     /**
