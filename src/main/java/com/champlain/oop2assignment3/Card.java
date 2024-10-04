@@ -44,6 +44,13 @@ public class Card {
         return this.aSuit;
     }
 
+    /**
+     * Checks if this card is equal to another.
+     *
+     * @param obj the object to compare this card to.
+     * @return true if the other object is a card with same rank and suit,
+     * otherwise false.
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -56,6 +63,11 @@ public class Card {
         return aRank == card.aRank && aSuit == card.aSuit;
     }
 
+    /**
+     * Returns the hash code for this card
+     *
+     * @return the hash code based on the rank and suit.
+     */
     @Override
     public int hashCode() {
         int result = aRank.hashCode();
