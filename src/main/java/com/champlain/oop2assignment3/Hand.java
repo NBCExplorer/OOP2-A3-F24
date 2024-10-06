@@ -1,9 +1,6 @@
 package com.champlain.oop2assignment3;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Represents a hand of playing cards.
@@ -46,8 +43,8 @@ public class Hand extends CardCollection implements ScoringStrategy {
     }
 
     @Override
-    public int calculateScore(CardCollection pCards) {
-        if (isEmpty())
+    public int calculateScore(CardCollection pCards, String pChoice) {
+        if (isEmpty() || !Objects.equals(pChoice, "Simple Count"))
             return 0;
         else
             return this.aCards.size();

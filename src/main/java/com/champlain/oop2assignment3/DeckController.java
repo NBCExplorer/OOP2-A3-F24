@@ -116,7 +116,7 @@ public class DeckController {
         } else {
             switch (choice) {
                 case "Simple Count":
-                    this.aScoreLabel.setText(String.valueOf((aHand.calculateScore(this.aDeck))));
+                    this.aScoreLabel.setText(String.valueOf((aHand.calculateScore(this.aDeck, "Simple Count"))));
                     break;
                 case "Number Of Aces":
                     // TODO: Replace the following line of code.
