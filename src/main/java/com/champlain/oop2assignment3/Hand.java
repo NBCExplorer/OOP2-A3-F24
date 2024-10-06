@@ -44,9 +44,21 @@ public class Hand extends CardCollection implements ScoringStrategy {
 
     @Override
     public int calculateScore(CardCollection pCards, String pChoice) {
-        if (isEmpty() || !Objects.equals(pChoice, "Simple Count"))
+        int count = 0;
+        if (isEmpty())
             return 0;
         else
-            return this.aCards.size();
+            if (Objects.equals(pChoice, "Simple Count"))
+                return this.aCards.size();
+            else
+                /*
+                Iterates through the ArrayList aCards of Hand, and counts how many
+                of said cards include the rank ACE.
+                 */
+                for (Card card : aCards) {
+                    if (Objects.equals(card.getRank().toString(), "ACE"))
+                        count++;
+                }
+                return count;
     }
 }

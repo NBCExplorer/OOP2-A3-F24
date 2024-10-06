@@ -119,8 +119,7 @@ public class DeckController {
                     this.aScoreLabel.setText(String.valueOf((aHand.calculateScore(this.aDeck, "Simple Count"))));
                     break;
                 case "Number Of Aces":
-                    // TODO: Replace the following line of code.
-                    this.aScoreLabel.setText("Number of aces...");
+                    this.aScoreLabel.setText(String.valueOf((aHand.calculateScore(this.aDeck, "Number Of Aces"))));
                     break;
                 default:
                     this.aScoreLabel.setText("This should not happen! You messed up.");
